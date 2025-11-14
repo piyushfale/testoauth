@@ -1,7 +1,7 @@
 from fastapi import FastAPI,Security
 from fastapi.middleware.cors import CORSMiddleware
-from app import students
-from app.auth import azure_scheme
+import students
+from auth import azure_scheme
 
 app = FastAPI(
     swagger_ui_oauth2_redirect_url='/oauth2-redirect',
@@ -28,7 +28,7 @@ app.include_router(students.router,dependencies=[Security(azure_scheme)])
 # def read_item(item_id: int, q: str | None = None):
 #     return {"item_id": item_id, "query": q}
 
-# if __name__ == "__main__":
+if __name__ == "__main__":
     
-#     import uvicorn
-#     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
