@@ -1,6 +1,6 @@
 from fastapi import FastAPI,Security
 # from fastapi.middleware.cors import CORSMiddleware
-# import students
+import students
 from auth import azure_scheme
 
 # app = FastAPI(
